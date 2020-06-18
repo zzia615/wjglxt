@@ -13,5 +13,17 @@ namespace wjglxt
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string s_file = tbFileName.Text;
+            string sql = "select * from fileinfo where 1=1 ";
+            if (!string.IsNullOrEmpty(s_file))
+            {
+                sql += " and name like N'%" + s_file + "%'";
+            }
+            SqlDataSource1.SelectCommand = sql;
+            GridView1.DataBind();
+        }
     }
 }

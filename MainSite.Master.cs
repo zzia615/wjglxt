@@ -13,7 +13,7 @@ namespace wjglxt
         {
             if (string.IsNullOrEmpty(Session[SessionData.登录用户名称].AsString()))
             {
-                //Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");
             }
         }
     }

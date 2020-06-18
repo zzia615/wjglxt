@@ -32,7 +32,7 @@ namespace wjglxt
                     Session[SessionData.登录用户] = s_name;
                     Session[SessionData.登录用户名称] = s_name;
 
-                    Response.Write("<script>alert('登录成功');window.location.href='Registe.aspx';</script>");
+                    Response.Write("<script>alert('登录成功');window.location.href='FileInfo.aspx';</script>");
 
                 }
                 else

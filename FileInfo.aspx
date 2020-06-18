@@ -2,12 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server"><form runat="server">
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="name" DataSourceID="SqlDataSource1">
+   
+        <div class="form-group" style="width:420px;">
+            <div class="col-sm-3">
+                <asp:Label ID="Label1" runat="server" Text="文件名" for="tbFileName" CssClass="control-label"></asp:Label>
+            </div>
+            <div class="col-sm-7">
+                <asp:TextBox ID="tbFileName" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-sm-2">
+                <asp:Button ID="Button1" runat="server" Text="查询" CssClass="btn btn-primary" OnClick="Button1_Click"/>
+            </div>
+        </div>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="name" DataSourceID="SqlDataSource1" CssClass="table table-bordered">
         <Columns>
-            <asp:BoundField DataField="name" HeaderText="name" ReadOnly="True" SortExpression="name" />
-            <asp:BoundField DataField="url" HeaderText="url" SortExpression="url" />
-            <asp:BoundField DataField="rq" HeaderText="rq" SortExpression="rq" />
-            <asp:BoundField DataField="xzcs" HeaderText="xzcs" SortExpression="xzcs" />
+            <asp:BoundField DataField="name" HeaderText="文件名" ReadOnly="True" SortExpression="name" />
+            <asp:BoundField DataField="url" HeaderText="url" SortExpression="url" Visible="false"/>
+            <asp:BoundField DataField="rq" HeaderText="上传日期" DataFormatString="{0:d}" SortExpression="rq" />
+            <asp:BoundField DataField="xzcs" HeaderText="下载次数" SortExpression="xzcs" />
             <asp:CommandField ShowDeleteButton="True" />
             <asp:TemplateField>
                 <ItemTemplate>
